@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDR Table</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px 15px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+
+        thead {
+            border-bottom: 2px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h2>CDR Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Hostname</th>
+                <th>Mem (%)</th>
+                <th>Task</th>
+                <th>CPU (%)</th>
+                <th>Partition</th>
+                <th>Process</th>
+                <th>Inode</th>
+                <th>CRM Status</th>
+                <th>State</th>
+                <th>Uptime (days)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ cdr_table }}
+        </tbody>
+    </table>
+</body>
+</html>
