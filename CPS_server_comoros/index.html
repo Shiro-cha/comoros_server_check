@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Status Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .status-ok {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status-issue {
+            color: red;
+            font-weight: bold;
+        }
+
+        .disk-usage {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .disk-usage li {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #4CAF50;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+            transition: width 0.3s ease;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .crm-info {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Server Status Dashboard</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Hostname</th>
+                    <th>Memory</th>
+                    <th>Tasks</th>
+                    <th>CPU Usage</th>
+                    <th>Disk Usage</th>
+                    <th>CRM Status</th>
+                    <th>Uptime</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Server 1 -->
+                <tr>
+                    <td>server1.example.com</td>
+                    <td>4 GB</td>
+                    <td>120 tasks</td>
+                    <td>35%</td>
+                    <td>
+                        <ul class="disk-usage">
+                            <li>
+                                <span>/var</span>
+                                <div class="tooltip">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 99%;">99%</div>
+                                    </div>
+                                    <span class="tooltiptext">Used: 99%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span>/var</span>
+                                <div class="tooltip">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 99%;">99%</div>
+                                    </div>
+                                    <span class="tooltiptext">Used: 99%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span>/var</span>
+                                <div class="tooltip">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 99%;">99%</div>
+                                    </div>
+                                    <span class="tooltiptext">Used: 99%</span>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                    </td>
+                    <td class="status-ok">Online</td>
+                    <td>10 days</td>
+                </tr>
+                <!-- CRM Information for Server 1 -->
+                <tr class="crm-info">
+                    <td colspan="7">
+                        <strong>CRM Status:</strong><br>
+                        Online nodes: [node1, node2]<br>
+                        Offline nodes: [node3]<br>
+                        Resource Groups: [resource1, resource2]<br>
+                        Resource Load Counts: <br>
+                        - resource1: 10<br>
+                        - resource2: 5<br>
+                    </td>
+                </tr>
+                <tr></tr>
+                    <td>server1.example.com</td>
+                    <td>4 GB</td>
+                    <td>120 tasks</td>
+                    <td>35%</td>
+                    <td>
+                        <ul class="disk-usage">
+                            <li>
+                                <span>/var</span>
+                                <div class="tooltip">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 99%;">99%</div>
+                                    </div>
+                                    <span class="tooltiptext">Used: 99%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span>/var</span>
+                                <div class="tooltip">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 99%;">99%</div>
+                                    </div>
+                                    <span class="tooltiptext">Used: 99%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span>/var</span>
+                                <div class="tooltip">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" style="width: 99%;">99%</div>
+                                    </div>
+                                    <span class="tooltiptext">Used: 99%</span>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                    </td>
+                    <td class="status-ok">Online</td>
+                    <td>10 days</td>
+                </tr>
+                <!-- CRM Information for Server 1 -->
+                <tr class="crm-info">
+                    <td colspan="7">
+                        <strong>CRM Status:</strong><br>
+                        Online nodes: [node1, node2]<br>
+                        Offline nodes: [node3]<br>
+                        Resource Groups: [resource1, resource2]<br>
+                        Resource Load Counts: <br>
+                        - resource1: 10<br>
+                        - resource2: 5<br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
